@@ -32,11 +32,11 @@ function createBoxes(amount){
 input.addEventListener('input', (el)=>{
   el = input.value;
   create.addEventListener('click', ()=>{
-    
     box.innerHTML = '';
     for(let key = 0; key < el; key ++){
       createBoxes(key);
     };
+    create.remove()
   });
 });
 
