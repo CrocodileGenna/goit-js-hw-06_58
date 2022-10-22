@@ -29,13 +29,29 @@ function createBoxes(amount){
   box.appendChild(divEl);
 };
 
-create.addEventListener('click', (el)=>{
-  el.preventDefault();
-  input.value = `${getRandom()}`;
-  for(let key = 0; key < input.value; key ++){
-    createBoxes(key);
-  }
+input.addEventListener('input', (el)=>{
+  el = input.value;
+  create.addEventListener('click', ()=>{
+    
+    box.innerHTML = '';
+    for(let key = 0; key < el; key ++){
+      createBoxes(key);
+    };
+  });
 });
+
+// create.addEventListener('click', (el)=>{
+
+//   el.preventDefault();
+//   input.value = `${getRandom()}`;
+   
+//   for(let key = 0; key < input.value; key ++){
+//     let ms = [];
+//     ms += key
+//     createBoxes(key);
+//     console.log(ms)
+//   }
+// });
 
 destroy.addEventListener('click', ()=>{
   location.reload()
