@@ -15,7 +15,10 @@ form.addEventListener('submit', (values)=>{
     values.preventDefault();
     const formData = new FormData(values.currentTarget);
     formData.forEach((email, password)=>{
+        email === '' || password === ""?
+        alert('Bсі поля повинні бути заповнені'):
         console.log('email: ', email);
-        console.log('password: ', password)
+        console.log('password: ', password);
+        form.reset()
     })
 })
